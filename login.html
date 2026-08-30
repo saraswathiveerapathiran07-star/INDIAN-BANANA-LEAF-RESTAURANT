@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login - Indian Banana Leaf Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Indian Banana Leaf Restaurant</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="canvas-page login-page">
+    <img src="assets/page2.png" alt="Restaurant login design" class="canvas-image">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="menu.html">Menu</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-    </nav>
+    <!-- Invisible navigation hotspots -->
+    <a class="hotspot login-home" href="index.html" aria-label="Home"></a>
 
-    <img src="page2.png.png" alt="Login Page">
-
+    <!-- Real HTML inputs placed over the Canva design -->
+    <form class="login-form" onsubmit="loginUser(event)">
+      <input id="loginEmail" type="email" required aria-label="Email" autocomplete="email">
+      <input id="loginPassword" type="password" required aria-label="Password" autocomplete="current-password">
+      <input class="remember" type="checkbox" aria-label="Remember me">
+      <button type="button" class="forgot" onclick="alert('Password reset feature is for demonstration.')">Forgot Password?</button>
+      <button class="real-login-button" type="submit">LOGIN</button>
+      <button type="button" class="signup-link" onclick="location.href='signup.html'">Sign Up</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
