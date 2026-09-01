@@ -1,170 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - Indian Banana Leaf Restaurant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome - Indian Banana Leaf Restaurant</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: #004d45;
-        }
+body{
+    margin:0;
+    padding:0;
+    background:#004d45;
+}
 
-        .page {
-            position: relative;
-            width: 100%;
-            max-width: 1664px;
-            margin: auto;
-        }
+.page{
+    position:relative;
+    width:100%;
+    max-width:1664px;
+    margin:auto;
+}
 
-        .page img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.page img{
+    width:100%;
+    height:auto;
+    display:block;
+}
 
-        /* Email */
-        #email {
-            position: absolute;
-            left: 12.8%;
-            top: 43.6%;
-            width: 28.7%;
-            height: 7.4%;
+input{
+    position:absolute;
+    left:12.8%;
+    width:28.7%;
+    height:7.4%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    font-size:clamp(14px,1.5vw,25px);
+    padding:0 20px;
+}
 
-            border: none;
-            outline: none;
-            background: transparent;
-            color: white;
-            font-size: clamp(14px, 1.5vw, 25px);
-            padding: 0 20px;
-        }
+input::placeholder{
+    color:white;
+    opacity:1;
+}
 
-        /* Password */
-        #password {
-            position: absolute;
-            left: 12.8%;
-            top: 59%;
-            width: 28.7%;
-            height: 7.4%;
+#email{top:43.6%}
+#password{top:59%}
 
-            border: none;
-            outline: none;
-            background: transparent;
-            color: white;
-            font-size: clamp(14px, 1.5vw, 25px);
-            padding: 0 20px;
-        }
+button{
+    position:absolute;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
 
-        /* Login button */
-        #loginButton {
-            position: absolute;
-            left: 12.8%;
-            top: 78.4%;
-            width: 28.7%;
-            height: 8.5%;
+#loginButton{
+    left:12.8%;
+    top:78.4%;
+    width:28.7%;
+    height:8.5%;
+}
 
-            border: none;
-            background: transparent;
-            cursor: pointer;
-        }
+#signupButton{
+    left:33%;
+    top:90.2%;
+    width:8.5%;
+    height:5%;
+}
 
-        /* Sign Up */
-        #signupButton {
-            position: absolute;
-            left: 33%;
-            top: 90.2%;
-            width: 8.5%;
-            height: 5%;
-
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Forgot Password */
-        #forgotPassword {
-            position: absolute;
-            left: 28.3%;
-            top: 68.7%;
-            width: 13%;
-            height: 4%;
-
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+#forgotPassword{
+    left:28.3%;
+    top:68.7%;
+    width:13%;
+    height:4%;
+}
+</style>
 </head>
 
 <body>
 
 <div class="page">
 
-    <img src="page2.png" alt="Welcome Login Page">
+<img src="page2.png" alt="Welcome Login Page">
 
-    <!-- Email -->
-    <input
-        type="email"
-        id="email"
-        placeholder=""
-        autocomplete="email"
-    >
+<input type="email" id="email" placeholder="Enter your email">
 
-    <!-- Password -->
-    <input
-        type="password"
-        id="password"
-        placeholder=""
-        autocomplete="current-password"
-    >
+<input type="password" id="password" placeholder="Enter your password">
 
-    <!-- Login -->
-    <button id="loginButton" type="button"></button>
+<button id="loginButton" type="button"></button>
 
-    <!-- Forgot Password -->
-    <button id="forgotPassword" type="button"></button>
+<button id="forgotPassword" type="button"></button>
 
-    <!-- Sign Up -->
-    <button id="signupButton" type="button"></button>
+<button id="signupButton" type="button"></button>
 
 </div>
 
 <script>
-    document.getElementById("loginButton").addEventListener("click", function () {
+document.getElementById("loginButton").addEventListener("click",function(){
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
+    const email=document.getElementById("email").value.trim();
+    const password=document.getElementById("password").value.trim();
 
-        if (email === "") {
-            alert("Please enter your email.");
-            return;
-        }
+    if(email===""){
+        alert("Please enter your email.");
+        return;
+    }
 
-        if (password === "") {
-            alert("Please enter your password.");
-            return;
-        }
+    if(password===""){
+        alert("Please enter your password.");
+        return;
+    }
 
-        alert("Login successful!");
+    alert("Login successful!");
+    window.location.href="index.html";
+});
 
-        window.location.href = "index.html";
-    });
+document.getElementById("signupButton").addEventListener("click",function(){
+    window.location.href="signup.html";
+});
 
-
-    document.getElementById("signupButton").addEventListener("click", function () {
-        window.location.href = "signup.html";
-    });
-
-
-    document.getElementById("forgotPassword").addEventListener("click", function () {
-        alert("Password reset feature will be available soon.");
-    });
+document.getElementById("forgotPassword").addEventListener("click",function(){
+    alert("Password reset feature will be available soon.");
+});
 </script>
 
 </body>
