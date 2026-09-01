@@ -1,146 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: #004d45;
-        }
+body{
+    margin:0;
+    padding:0;
+    background:#004d45;
+}
 
-        .page {
-            position: relative;
-            width: 100%;
-            max-width: 1664px;
-            margin: auto;
-        }
+.page{
+    position:relative;
+    width:100%;
+    max-width:1664px;
+    margin:auto;
+}
 
-        .page img {
-            width: 100%;
-            display: block;
-        }
+.page img{
+    width:100%;
+    height:auto;
+    display:block;
+}
 
-        input {
-            position: absolute;
-            left: 14%;
-            width: 36%;
-            height: 7%;
-            border: none;
-            outline: none;
-            background: transparent;
-            color: white;
-            font-size: clamp(14px, 1.5vw, 25px);
-            padding: 0 20px;
-        }
+input{
+    position:absolute;
+    left:14%;
+    width:36%;
+    height:7%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    font-size:clamp(14px,1.5vw,25px);
+    padding:0 20px;
+}
 
-        #name {
-            top: 22%;
-        }
+input::placeholder{
+    color:white;
+    opacity:1;
+}
 
-        #email {
-            top: 37.5%;
-        }
+#name{top:22%}
+#email{top:37.5%}
+#password{top:53%}
+#confirmPassword{top:68.5%}
 
-        #password {
-            top: 53%;
-        }
+button{
+    position:absolute;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
 
-        #confirmPassword {
-            top: 68.5%;
-        }
+#signupButton{
+    left:14%;
+    top:80%;
+    width:36%;
+    height:8%;
+}
 
-        button {
-            position: absolute;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        #signupButton {
-            left: 14%;
-            top: 80%;
-            width: 36%;
-            height: 8%;
-        }
-
-        #loginButton {
-            left: 40%;
-            top: 90%;
-            width: 8%;
-            height: 5%;
-        }
-    </style>
+#loginButton{
+    left:40%;
+    top:90%;
+    width:8%;
+    height:5%;
+}
+</style>
 </head>
 
 <body>
 
 <div class="page">
 
-    <img src="page3.png" alt="Sign Up">
+<img src="page3.png" alt="Sign Up">
 
-    <input type="text" id="name" placeholder="Enter your full name">
+<input type="text" id="name" placeholder="Enter your full name">
 
-    <input type="email" id="email" placeholder="Enter your email">
+<input type="email" id="email" placeholder="Enter your email">
 
-    <input type="password" id="password" placeholder="Create a password">
+<input type="password" id="password" placeholder="Create a password">
 
-    <input type="password" id="confirmPassword" placeholder="Confirm your password">
+<input type="password" id="confirmPassword" placeholder="Confirm your password">
 
-    <button id="signupButton" type="button"></button>
+<button id="signupButton" type="button"></button>
 
-    <button id="loginButton" type="button"></button>
+<button id="loginButton" type="button"></button>
 
 </div>
 
 <script>
-    document.getElementById("signupButton").addEventListener("click", function () {
+document.getElementById("signupButton").addEventListener("click", function(){
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-        if (name === "") {
-            alert("Please enter your full name.");
-            return;
-        }
+    if(name === ""){
+        alert("Please enter your full name.");
+        return;
+    }
 
-        if (email === "") {
-            alert("Please enter your email.");
-            return;
-        }
+    if(email === ""){
+        alert("Please enter your email.");
+        return;
+    }
 
-        if (password === "") {
-            alert("Please create a password.");
-            return;
-        }
+    if(password === ""){
+        alert("Please create a password.");
+        return;
+    }
 
-        if (confirmPassword === "") {
-            alert("Please confirm your password.");
-            return;
-        }
+    if(confirmPassword === ""){
+        alert("Please confirm your password.");
+        return;
+    }
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-        }
+    if(password !== confirmPassword){
+        alert("Passwords do not match.");
+        return;
+    }
 
-        alert("Account created successfully!");
+    alert("Account created successfully!");
+    window.location.href="login.html";
+});
 
-        window.location.href = "login.html";
-    });
-
-    document.getElementById("loginButton").addEventListener("click", function () {
-        window.location.href = "login.html";
-    });
+document.getElementById("loginButton").addEventListener("click", function(){
+    window.location.href="login.html";
+});
 </script>
 
 </body>
