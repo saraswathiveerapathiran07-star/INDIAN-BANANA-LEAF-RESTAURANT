@@ -3,15 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact - Indian Banana Leaf Restaurant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #004d45;
+        }
+
+        .page {
+            position: relative;
+            width: 100%;
+            max-width: 1664px;
+            margin: auto;
+        }
+
+        .page img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        input,
+        textarea {
+            position: absolute;
+            left: 13%;
+            width: 35%;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            font-size: clamp(14px, 1.4vw, 24px);
+            padding: 10px 15px;
+            resize: none;
+        }
+
+        #name {
+            top: 35%;
+            height: 7%;
+        }
+
+        #email {
+            top: 48%;
+            height: 7%;
+        }
+
+        #message {
+            top: 61%;
+            height: 16%;
+        }
+
+        #send {
+            position: absolute;
+            left: 13%;
+            top: 81%;
+            width: 35%;
+            height: 8%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .nav {
+            position: absolute;
+            top: 3%;
+            height: 8%;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #home {
+            left: 30%;
+            width: 9%;
+        }
+
+        #menu {
+            left: 42%;
+            width: 9%;
+        }
+
+        #contact {
+            left: 52%;
+            width: 12%;
+        }
+
+        #about {
+            left: 65%;
+            width: 13%;
+        }
+    </style>
 </head>
 
 <body>
 
-    <a href="login.html">
-        <img src="page4.png" alt="Contact Page" style="width:100%; height:auto;">
-    </a>
+<div class="page">
+
+    <img src="page5.png" alt="Contact Us">
+
+    <button id="home" class="nav" type="button"></button>
+    <button id="menu" class="nav" type="button"></button>
+    <button id="contact" class="nav" type="button"></button>
+    <button id="about" class="nav" type="button"></button>
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <textarea id="message" placeholder="Enter your message"></textarea>
+
+    <button id="send" type="button"></button>
+
+</div>
+
+<script>
+    document.getElementById("home").onclick = function () {
+        window.location.href = "index.html";
+    };
+
+    document.getElementById("menu").onclick = function () {
+        window.location.href = "menu.html";
+    };
+
+    document.getElementById("contact").onclick = function () {
+        window.location.href = "contact.html";
+    };
+
+    document.getElementById("about").onclick = function () {
+        window.location.href = "about.html";
+    };
+
+    document.getElementById("send").onclick = function () {
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name === "") {
+            alert("Please enter your name.");
+            return;
+        }
+
+        if (email === "") {
+            alert("Please enter your email.");
+            return;
+        }
+
+        if (message === "") {
+            alert("Please enter your message.");
+            return;
+        }
+
+        alert("Your message has been sent successfully!");
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    };
+</script>
 
 </body>
 </html>
